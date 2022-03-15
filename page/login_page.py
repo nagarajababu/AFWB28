@@ -6,6 +6,7 @@ class Login_Page:
     __username_tb=(By.ID,"txtUsername")
     __password_tb=(By.NAME,"txtPassword")
     __login_btn=(By.XPATH,"//input[@id='btnLogin']")
+    __err_msg=(By.XPATH,"//span[@id='spanMessage']")
 
     #Initialization(using constructor)
     def __init__(self,driver):
@@ -20,3 +21,7 @@ class Login_Page:
 
     def click_login_button(self):
         self.driver.find_element(*self.__login_btn).click()
+
+    def verify_err_msg_is_displayed(self):
+        errormessage=self.driver.find_element(*self.__err_msg).text
+        print(errormessage)
