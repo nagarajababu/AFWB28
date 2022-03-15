@@ -7,7 +7,7 @@ from page.dashboard_page import Dashboard_Page
 
 class Test_Valid_Login(BaseTest):
 
-    @pytest.mark.run(order=1)
+    @pytest.mark.run(order=2)
     def test_valid_login(self):
 
 #get data from Excel

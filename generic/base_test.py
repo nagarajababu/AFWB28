@@ -11,7 +11,7 @@ from selenium.webdriver.chrome.service import Service
 class BaseTest:
 
     @pytest.fixture(autouse=True)
-    def open_app(self):
+    def open_close_app(self):
 
         # create object of the properties open and load
         p_file = Properties()
