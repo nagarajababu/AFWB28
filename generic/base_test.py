@@ -40,6 +40,8 @@ class BaseTest:
         self.driver.get(url)
         #self.driver.get("https://opensource-demo.orangehrmlive.com/")
 
+        self.driver.get_screenshot_as_file(".\\screenshoots2.png")
+
         # Last, Go, run the test and comes back
         yield
 

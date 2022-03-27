@@ -6,7 +6,7 @@ from page.login_page import Login_Page
 
 
 class Test_invalid_login(BaseTest):
-    @pytest.mark.run(order=1)
+
     def test_invalid_login(self):
         #get data from Excel
         un=Excel.get_dat(self.xl_path,"InvalidLogin",2,1)
@@ -19,6 +19,7 @@ class Test_invalid_login(BaseTest):
         login_page.click_login_button()
         result=login_page.verify_err_msg_is_displayed()
         print(result)
+        self.driver.get_screenshot_as_file(".\\screenshoots4.png")
         #enter invalid password
         #click login
         #verify that error message is displayed

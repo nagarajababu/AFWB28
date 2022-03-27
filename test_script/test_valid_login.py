@@ -7,7 +7,6 @@ from page.dashboard_page import Dashboard_Page
 
 class Test_Valid_Login(BaseTest):
 
-    @pytest.mark.run(order=2)
     def test_valid_login(self):
 
 #get data from Excel
@@ -26,6 +25,6 @@ class Test_Valid_Login(BaseTest):
 
 #    verify
 # 4. Verify that home page is displayed
-        dashboard_page=Dashboard_Page(self.driver)
-        result=dashboard_page.verify_dashboard_page_is_displayed(self.wait)
-        assert result
+        dashboard_page = Dashboard_Page(self.driver)
+        dashboard_page.verify_dashboard_page_is_displayed()
+        self.driver.get_screenshot_as_file(".\\screenshoots6.png")

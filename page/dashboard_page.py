@@ -12,11 +12,5 @@ class Dashboard_Page:
         self.driver = driver
 
     # Utilization(using methods)
-    def set_username(self,wait):
-        try:
-            wait.until(expected_conditions.visibility_of_element_located(self.__dashboard))
-            print("Home page is displayed")
-            return True
-        except:
-            print("Home page is not diaplayed")
-            return False
+    def verify_dashboard_page_is_displayed(self):
+        self.driver.find_element(*self.__dashboard)
