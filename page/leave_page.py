@@ -12,6 +12,7 @@ class Leave_Page:
     __SelectLeaveType = (By.XPATH,"//option[contains(text(),'CAN - Vacation')]")
     __Entitlement = (By.XPATH,"//input[@id='entitlements_entitlement']")
     __SaveButton =(By.XPATH,"//input[@id='btnSave']")
+    __Apply = (By.XPATH, "//a[@id='menu_leave_applyLeave']")
 
     # Initialization(using constructor)
     def __init__(self, driver):
@@ -38,3 +39,6 @@ class Leave_Page:
 
     def click_save(self):
         self.driver.find_element(*self.__SaveButton).click()
+
+    def click_Apply(self):
+        self.driver.find_element(*self.__Apply).click()

@@ -39,6 +39,8 @@ class Test_Leave_employee(BaseTest):
         main_page = Main_Page(self.driver)
         main_page.click_Leave_button()
 
+        dashboard_page = Dashboard_Page(self.driver)
+
 #5.  Click on Add Employee
         leave_page = Leave_Page(self.driver)
         leave_page.click_Entitlements_Button()
@@ -48,4 +50,10 @@ class Test_Leave_employee(BaseTest):
         leave_page.click_SelectLeaveType()
         leave_page.set_Entitlement(en)
         leave_page.click_save()
+        dashboard_page.click_welcome()
+        dashboard_page.click_logout()
+        login_page.set_username(cun)
+        login_page.set_password(upw)
+        #self.driver.get_screenshot_as_file(".\\screenshoots6.png")
+        login_page.click_login_button()
         self.driver.get_screenshot_as_file(".\\screenshoots5.png")
